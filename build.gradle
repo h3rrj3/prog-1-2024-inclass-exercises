@@ -1,0 +1,38 @@
+plugins {
+    id 'application'
+}
+
+group = 'fhcampuswien.ac.at'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+mainClassName = 'at.ac.fhcampuswien.person.PersonApp'
+
+test {
+    useJUnitPlatform()
+}
+
+run {
+    standardInput(System.in)
+}
+allprojects {
+    tasks.withType(JavaCompile) {
+        sourceCompatibility = JavaVersion.VERSION_16
+        targetCompatibility = JavaVersion.VERSION_16
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+tasks.withType(Test) {
+    systemProperty "file.encoding", "UTF-8"
+}
