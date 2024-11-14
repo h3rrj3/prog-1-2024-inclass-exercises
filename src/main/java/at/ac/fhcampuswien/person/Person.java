@@ -50,4 +50,18 @@ public class Person {
     public void setBirthday(SimpleDate birthday) {
         this.birthday = birthday;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false; // if (!(o instanceof Person)) als "schnellste Möglichkeit"
+        Person comparedPerson = (Person) o;
+        return this.name.equals(comparedPerson.name) && this.birthday.equals(comparedPerson.birthday);
+    }
+
+    public Person(Person p) {
+        this.name = p.name;
+//        this.birthday = new SimpleDate(p.birthday.getDay(), p.birthday.getMonth(), p.birthday.getYear());
+        this.birthday = new SimpleDate(p.birthday);
+    }
 }

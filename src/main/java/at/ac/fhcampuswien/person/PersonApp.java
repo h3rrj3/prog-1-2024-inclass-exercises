@@ -23,12 +23,11 @@ public class PersonApp
 
             /** Uncomment the following code after having implemented public static Person(Person)
              * and public static SimpleDate(SimpleDate) **/
-            /**
+
             Person charles1= new Person(charles);
             System.out.println(charles1==charles); // false
             System.out.println(charles1.equals(charles)); // true
-            System.out.println(charles.getBirthday().equals(charles1.getBirthday()); /// true
-            **/
+            System.out.println(charles.getBirthday().equals(charles1.getBirthday())); /// true
 
         }
         catch(Exception e) {
